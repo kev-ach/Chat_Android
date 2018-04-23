@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#110064</color>
+    <color name="colorPrimaryDark">#110064</color>
+    <color name="colorAccent">#110064</color>
+    <color name="bleu_iode">#110064</color>
+    <color name="jaune_iode">#FBC403</color>
+    <color name="rouge_iode">#A94442</color>
+    <color name="blanc_iode">#FFFFFF</color>
 </resources>
