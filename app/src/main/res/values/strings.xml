@@ -2,12 +2,11 @@
     <string name="app_name">Android_Chat</string>
     <string name="seconnecter">Connexion</string>
     <string name="bienvenueTitle">Bienvenue</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="senregistrer">S\'enregistrer</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Mot de passe</string>
-    <string name="action_sign_in">Sign in or register</string>
     <string name="valider">Valider</string>
     <string name="suivant">Suivant</string>
     <string name="enregistrer">Enregistrer</string>

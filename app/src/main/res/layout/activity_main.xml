@@ -11,67 +11,77 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-        <ImageView
-            android:id="@+id/image_logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:src="@drawable/logo"
-            android:contentDescription="@string/todo" />
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/todo" />
 
+    <TextView
+        android:id="@+id/activity_main_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:text="@string/bienvenueTitle"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/activity_main_title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:singleLine="true"
-                android:text="@string/bienvenueTitle"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+    <EditText
+        android:id="@+id/activity_main_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:hint="@string/user"
+        android:imeActionId="6"
+        android:imeActionLabel="@string/valider"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true" />
 
+    <EditText
+        android:id="@+id/activity_main_mdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:hint="@string/mdpInfo"
+        android:imeActionId="6"
+        android:imeActionLabel="@string/valider"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true" />
 
-            <EditText
-                android:id="@+id/activity_main_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="30dp"
-                android:hint="@string/user"
-                android:imeActionId="6"
-                android:imeActionLabel="@string/valider"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true" />
+    <Button
+        android:id="@+id/activity_main_valider_btn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/seconnecter"
+        android:textColor="@color/blanc"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:background="@drawable/border_blue"/>
 
-            <EditText
-                android:id="@+id/activity_main_mdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="30dp"
-                android:hint="@string/mdpInfo"
-                android:imeActionId="6"
-                android:imeActionLabel="@string/valider"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true" />
-
-
-        <Button
-            android:id="@+id/activity_main_valider_btn"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:text="@string/seconnecter"
-            android:textColor="@color/blanc_iode"
-            android:textSize="12sp"
-            android:textAllCaps="false"
-            android:background="@drawable/border_blue"/>
+    <Button
+        android:id="@+id/activity_main_signup"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:textAllCaps="false"
+        android:textColor="@color/blanc"
+        android:text="@string/senregistrer"
+        android:background="@drawable/border_green"
+        android:textSize="12sp" />
 
 </LinearLayout>

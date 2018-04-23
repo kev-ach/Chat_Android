@@ -21,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_signup"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
