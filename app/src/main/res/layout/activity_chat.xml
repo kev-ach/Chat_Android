@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".ChatActivity">
 
     <TextView
         android:id="@+id/activity_main_title_text"
@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="20dp"
-        android:singleLine="false"
-        android:text="Layout Sign up , formulaire a faire par Abdel"
+        android:singleLine="true"
+        android:text="Layout de chat a faire par Nam"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />

@@ -3,7 +3,7 @@ package com.example.kevin.android_chat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Activity_signup extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
