@@ -30,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String mdp = mPasswordInput.getText().toString();
+                String login = mLoginInput.getText().toString();
 
-                if (mdp.equals("")) {
-                    Toast.makeText(MainActivity.this, "Mot de passe obligatoire", Toast.LENGTH_SHORT).show();
-                } else if (mdp.equals("test")) {
+                if (login.equals("") && mdp.equals("")) {
+                    Toast.makeText(MainActivity.this, "Identifiant et/ou Mot de passe obligatoire", Toast.LENGTH_SHORT).show();
+                } else if (login.equals("") && mdp.equals("test")) {
                     // Si mdp_local(le mot de passe entrer) = au mot de passe enregistrer dans SharedPreference alors redirige vers AddProjectActivity
                         /*for (int i = 0; i < 2; i++) {
                             Toast.makeText(MainActivity.this, "Mot de passe : " + mdp, Toast.LENGTH_SHORT).show();

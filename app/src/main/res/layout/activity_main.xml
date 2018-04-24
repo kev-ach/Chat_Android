@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,31 +33,55 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/activity_main_login"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
-        android:hint="@string/user"
-        android:imeActionId="6"
-        android:imeActionLabel="@string/valider"
-        android:inputType="text"
-        android:maxLines="1"
-        android:singleLine="true" />
+        android:layout_marginStart="30dp">
 
-    <EditText
-        android:id="@+id/activity_main_mdp"
+        <ImageView
+            android:id="@+id/imagePseudo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:srcCompat="@mipmap/ic_account_circle_black_24dp" />
+
+        <EditText
+            android:id="@+id/activity_main_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/valider"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
-        android:hint="@string/mdpInfo"
-        android:imeActionId="6"
-        android:imeActionLabel="@string/valider"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:singleLine="true" />
+        android:layout_marginStart="30dp">
+
+        <ImageView
+            android:id="@+id/imageMdp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:srcCompat="@mipmap/ic_lock_outline_black_24dp" />
+
+        <EditText
+            android:id="@+id/activity_main_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mdpInfo"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/valider"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/activity_main_valider_btn"
