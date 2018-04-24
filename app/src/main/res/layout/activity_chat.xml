@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
+
+    <TextView
+        android:id="@+id/activity_main_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:text="Layout de chat a faire par Nam"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_main_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:text="Layout de chat a faire par Nam"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/activity_main_title_text"
         android:layout_width="wrap_content"

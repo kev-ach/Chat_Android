@@ -6,16 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
-    <TextView
-        android:id="@+id/activity_main_title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:singleLine="false"
-        android:text="Layout Sign up , formulaire a faire par Abdel"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/signup_main_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:singleLine="true"
+            android:text="Inscription"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/signup_main_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:hint="@string/user"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/valider"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/signup_main_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:hint="@string/mdpInfo"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/valider"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/signup_main_mdpconfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:hint="Confirmer votre mot de passe"
+            android:imeActionId="6"
+            android:imeActionLabel="@string/valider"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/signup_main_submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/border_blue"
+            android:text="Soumettre"
+            android:textAllCaps="false"
+            android:textColor="@color/blanc"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 </LinearLayout>
