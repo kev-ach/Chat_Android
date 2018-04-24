@@ -3,6 +3,8 @@
     <string name="seconnecter">Connexion</string>
     <string name="bienvenueTitle">Bienvenue</string>
     <string name="senregistrer">S\'enregistrer</string>
+    <string name="profil">Modifier votre profil</string>
+    <string name="modifier">Modifier</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
