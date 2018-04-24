@@ -1,6 +1,8 @@
 package com.example.kevin.android_chat;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +21,11 @@ public class ChatActivity extends AppCompatActivity {
     private Button modifierProfil;
     private Toolbar mToolBar;
 
+    private ViewPager mViewPager;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+
+    private TabLayout mTabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +37,13 @@ public class ChatActivity extends AppCompatActivity {
         setSupportActionBar(mToolBar);
         getSupportActionBar().setTitle("Chat Android");
 
-        modifierProfil = (Button) findViewById((R.id.activity_main_valider_btn));
+        mViewPager = (ViewPager) findViewById(R.id.chat_tabPager);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        modifierProfil.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent profilActivityIntent = new Intent(ChatActivity.this, ProfilActivity.class);
-                startActivity(profilActivityIntent);
-            }
-        }));
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        mTabLayout = (TabLayout) findViewById(R.id.chat_tabs);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
