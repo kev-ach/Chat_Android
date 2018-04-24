@@ -10,6 +10,11 @@ import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
+    private EditText mLoginInput;
+    private EditText mPasswordInput;
+    private EditText mPasswordConfirmInput;
+    private Button mSignupButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +24,7 @@ public class SignupActivity extends AppCompatActivity {
         mPasswordConfirmInput = (EditText) findViewById(R.id.signup_main_mdpconfirm);
         mSignupButton = (Button) findViewById(R.id.signup_main_submit_btn);
 
-        mValiderButton.setOnClickListener(new View.OnClickListener() {
+        mSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -27,11 +32,11 @@ public class SignupActivity extends AppCompatActivity {
                 String mdp_confirm = mPasswordConfirmInput.getText().toString();
 
                 if (!mdp.equals(mdp_confirm)) {
-                    Toast.makeText(MainActivity.this, "Veuillez insérer le même mot de passe.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupActivity.this, "Veuillez insérer le même mot de passe.", Toast.LENGTH_LONG).show();
                 }
                 else  {
 
-                    Intent chatActivityIntent = new Intent(MainActivity.this, ChatActivity.class);
+                    Intent chatActivityIntent = new Intent(SignupActivity.this, ChatActivity.class);
                     startActivity(chatActivityIntent);
                 }
             }
