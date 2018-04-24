@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginEnd="30dp"
-    android:layout_marginStart="30dp"
     tools:context=".SignupActivity">
 
-        <TextView
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!--<TextView
             android:id="@+id/signup_main_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:text="Inscription"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />-->
 
         <EditText
             android:id="@+id/signup_main_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:hint="Pseudo"
             android:textColor="@color/colorPrimary"
@@ -38,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:hint="Nom"
             android:textColor="@color/colorPrimary"
@@ -50,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:hint="Prenom"
             android:textColor="@color/colorPrimary"
@@ -62,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:hint="Email"
             android:textColor="@color/colorPrimary"
@@ -74,9 +79,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:hint="Téléphone"
+            android:inputType="textPassword"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -86,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:padding="15dp"
+            android:padding="20dp"
             android:singleLine="true"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
@@ -103,7 +109,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:padding="15dp"
+            android:padding="20dp"
+
+
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -118,12 +126,13 @@
             android:id="@+id/signup_main_submit_btn"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/border_green"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/border_blue"
             android:text="Soumettre"
             android:textAllCaps="false"
             android:textColor="@color/blanc"
             android:textSize="12sp" />
 
+    </LinearLayout>
 </LinearLayout>
