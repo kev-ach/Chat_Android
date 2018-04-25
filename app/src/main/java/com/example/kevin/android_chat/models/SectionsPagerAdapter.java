@@ -1,11 +1,15 @@
-package com.example.kevin.android_chat;
+package com.example.kevin.android_chat.models;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-class SectionsPagerAdapter extends FragmentPagerAdapter {
+import com.example.kevin.android_chat.fragements.ChatsFragment;
+import com.example.kevin.android_chat.fragements.FriendsFragment;
+import com.example.kevin.android_chat.fragements.RequestsFragement;
+
+public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
 
     public SectionsPagerAdapter(FragmentManager fm) {

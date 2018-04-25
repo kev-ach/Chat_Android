@@ -226,18 +226,18 @@
     </LinearLayout>
 
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonChangeImage"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/layoutTelephone"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/rouge"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="129dp"
+        android:layout_marginTop="92dp"
+        android:background="@null"
         android:paddingLeft="7dp"
         android:paddingRight="7dp"
+        android:src="@drawable/camera"
         android:text="Changer Image"
         android:textColor="@color/blanc" />
 

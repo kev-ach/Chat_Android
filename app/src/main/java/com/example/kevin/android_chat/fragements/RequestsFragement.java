@@ -1,4 +1,4 @@
-package com.example.kevin.android_chat;
+package com.example.kevin.android_chat.fragements;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.kevin.android_chat.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FriendsFragment extends Fragment {
+public class RequestsFragement extends Fragment {
 
 
-    public FriendsFragment() {
+    public RequestsFragement() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class FriendsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_friends, container, false);
+        return inflater.inflate(R.layout.fragment_requests_fragement, container, false);
     }
 
 }
