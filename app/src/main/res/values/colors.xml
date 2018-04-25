@@ -5,7 +5,7 @@
     <color name="colorAccent">#110064</color>
     <color name="bleu">#110064</color>
     <color name="jaune">#FBC403</color>
-    <color name="rouge">#A94442</color>
-    <color name="blanc">#FFFFFF</color>
+    <color name="rouge">#cd312e</color>
+    <color name="blanc">#e1dddd</color>
     <color name="vert">#2dc90a</color>
 </resources>

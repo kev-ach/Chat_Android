@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -31,6 +36,7 @@ public class SignupActivity extends AppCompatActivity {
     private ProgressDialog mRegProgressDialog;
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String pseudo = mLoginInput.getText().toString();
                 String mdp = mPasswordInput.getText().toString();
                 String mdp_confirm = mPasswordConfirmInput.getText().toString();
                 String nom = mNom.getText().toString();
@@ -70,18 +77,19 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, "Veuillez insérer le même mot de passe.", Toast.LENGTH_LONG).show();
                 }
                 else  {
-                    if(!TextUtils.isEmpty(nom) ||
-                            !TextUtils.isEmpty(prenom) ||
-                            !TextUtils.isEmpty(mail) ||
-                            !TextUtils.isEmpty(telephone) ||
-                            !TextUtils.isEmpty(mdp) ||
+                    if(!TextUtils.isEmpty(pseudo) &&
+                            !TextUtils.isEmpty(nom) &&
+                            !TextUtils.isEmpty(prenom) &&
+                            !TextUtils.isEmpty(mail) &&
+                            !TextUtils.isEmpty(telephone) &&
+                            !TextUtils.isEmpty(mdp) &&
                             !TextUtils.isEmpty(mdp_confirm)){
 
                         mRegProgressDialog.setTitle("Inscription en cours");
                         mRegProgressDialog.setMessage("Veuillez patientez");
                         mRegProgressDialog.setCanceledOnTouchOutside(false);
                         mRegProgressDialog.show();
-                        register_user(nom,prenom,mail,mdp,telephone);
+                        register_user(pseudo,nom,prenom,mail,mdp,telephone);
                     }else {
                         Toast.makeText(SignupActivity.this,"Veuillez remplir les champs",Toast.LENGTH_SHORT).show();
                     }
@@ -91,7 +99,7 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    private void register_user(String nom, String prenom, String mail, String mdp, String telephone) {
+    private void register_user(final String pseudo, final String nom, final String prenom, final String mail, String mdp, final String telephone) {
 
         mAuth.createUserWithEmailAndPassword(mail, mdp)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -100,10 +108,32 @@ public class SignupActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
 
-                            mRegProgressDialog.dismiss();
-                            Intent mainIntent = new Intent(SignupActivity.this, ChatActivity.class);
-                            startActivity(mainIntent);
-                            finish();
+                            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                            String uid = currentUser.getUid();
+
+                            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+                            HashMap<String,String> userMap =  new HashMap<>();
+                            userMap.put("pseudo",pseudo);
+                            userMap.put("nom",nom);
+                            userMap.put("prenom",prenom);
+                            userMap.put("email",mail);
+                            userMap.put("telephone",telephone);
+                            userMap.put("image","default");
+                            userMap.put("thumb_image","default");
+
+                            mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                    if(task.isSuccessful()){
+                                        mRegProgressDialog.dismiss();
+                                        Intent mainIntent = new Intent(SignupActivity.this, ChatActivity.class);
+                                        startActivity(mainIntent);
+                                        finish();
+                                    }
+                                }
+                            });
                         } else {
 
                             mRegProgressDialog.hide();

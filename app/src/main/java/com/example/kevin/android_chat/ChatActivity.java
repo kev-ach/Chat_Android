@@ -84,6 +84,12 @@ public class ChatActivity extends AppCompatActivity {
             sendToStart();
         }
 
+        if(item.getItemId() == R.id.chat_profile_btn){
+
+            Intent profilIntent = new Intent(ChatActivity.this, ProfilActivity.class);
+            startActivity(profilIntent);
+        }
+
         return true;
     }
 }
