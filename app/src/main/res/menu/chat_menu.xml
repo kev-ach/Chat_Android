@@ -6,6 +6,9 @@
         android:id="@+id/chat_profile_btn"
         android:title="Profile" />
     <item
+        android:id="@+id/chat_contacts_btn"
+        android:title="Contacts" />
+    <item
         android:id="@+id/chat_logout_btn"
         android:title="@string/logout" />
 </menu>

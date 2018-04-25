@@ -90,6 +90,13 @@ public class ChatActivity extends AppCompatActivity {
             startActivity(profilIntent);
         }
 
+        if(item.getItemId() == R.id.chat_contacts_btn){
+
+            Intent contactsIntent = new Intent(ChatActivity.this, UsersActivity.class);
+            startActivity(contactsIntent);
+        }
+
+
         return true;
     }
 }

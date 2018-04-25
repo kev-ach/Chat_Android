@@ -3,8 +3,8 @@
     package="com.example.kevin.android_chat">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,10 +28,17 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ProfilActivity" />
-        <activity android:name=".PseudoActivity"
-            android:parentActivityName=".ProfilActivity"></activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity
+            android:name=".PseudoActivity"
+            android:parentActivityName=".ProfilActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".UsersActivity"
+            android:parentActivityName=".ChatActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
