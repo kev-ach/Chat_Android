@@ -74,7 +74,6 @@
             android:padding="15dp"
             android:singleLine="true"
             android:hint="Téléphone"
-            android:inputType="textPassword"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
