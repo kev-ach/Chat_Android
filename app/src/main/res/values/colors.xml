@@ -9,4 +9,6 @@
     <color name="blanc">#ffffff</color>
     <color name="vert">#2dc90a</color>
     <color name="gris">#656963</color>
+    <color name="noiClaire">#2e302d</color>
+    <color name="bleuViolet">#3724df</color>
 </resources>
