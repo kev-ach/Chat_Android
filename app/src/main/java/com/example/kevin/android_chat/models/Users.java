@@ -8,19 +8,21 @@ public class Users {
     public String email;
     public String image;
     public String telephone;
+    public String thumb_image;
 
     public Users(){
 
 
     }
 
-    public Users(String pseudo, String nom, String prenom, String email, String image, String telephone) {
+    public Users(String pseudo, String nom, String prenom, String email, String image, String telephone, String thumb_image) {
         this.pseudo = pseudo;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.image = image;
         this.telephone = telephone;
+        this.thumb_image = thumb_image;
     }
 
     public String getPseudo() {
@@ -69,5 +71,13 @@ public class Users {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public String getThumb_image() {
+        return thumb_image;
+    }
+
+    public void setThumb_image(String thumb_image) {
+        this.thumb_image = thumb_image;
     }
 }

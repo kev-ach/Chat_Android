@@ -2,6 +2,7 @@ package com.example.kevin.android_chat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -28,9 +29,16 @@ import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import id.zelory.compressor.Compressor;
 
 public class ProfilActivity extends AppCompatActivity {
 
@@ -101,7 +109,12 @@ public class ProfilActivity extends AppCompatActivity {
                 mNom.setText(name);
                 mEmail.setText(email);
                 mTelephone.setText(tel);
-                Picasso.get().load(image).into(mDisplayImage);
+
+                if (!image.equals("default")){
+
+                    Picasso.get().load(image).placeholder(R.drawable.default_avatar).into(mDisplayImage);
+                }
+
 
             }
 
@@ -146,7 +159,9 @@ public class ProfilActivity extends AppCompatActivity {
         if(requestCode == GALLERY_PICK && resultCode == RESULT_OK){
             Uri imageUri = data.getData();
 
-            CropImage.activity(imageUri).setAspectRatio(1,1).start(this);
+            CropImage.activity(imageUri).setAspectRatio(1,1)
+                    .setMinCropWindowSize(500,500)
+                    .start(this);
         }
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -161,29 +176,67 @@ public class ProfilActivity extends AppCompatActivity {
 
                 Uri resultUri = result.getUri();
 
-                String currentUser = mCurrentUser.getUid();
-                StorageReference filepath = mImageStorage.child("profil_images").child(currentUser +".jpg");
-                filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if(task.isSuccessful()){
+                File thumb_file = new File(resultUri.getPath());
 
-                            String download_url = task.getResult().getDownloadUrl().toString();
-                            mUserDatabase.child("image").setValue(download_url).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-                                        mProgressDialog.dismiss();
-                                        Toast.makeText(ProfilActivity.this,"Uploaded",Toast.LENGTH_LONG).show();
+                String currentUser = mCurrentUser.getUid();
+
+                try {
+                    Bitmap thumb_bitmap = new Compressor(this)
+                            .setMaxWidth(200)
+                            .setMaxHeight(200)
+                            .setQuality(75)
+                            .compressToBitmap(thumb_file);
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    thumb_bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+                    final byte[] thumb_byte = baos.toByteArray();
+                    StorageReference filepath = mImageStorage.child("profil_images").child(currentUser +".jpg");
+                    final StorageReference thumb_filePath = mImageStorage.child("profil_images").child("thumbs").child(currentUser +".jpg");
+                    filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                            if(task.isSuccessful()){
+
+                                final String download_url = task.getResult().getDownloadUrl().toString();
+                                UploadTask uploadTask = thumb_filePath.putBytes(thumb_byte);
+                                uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> thumb_task) {
+
+                                        String thumb_download_url = thumb_task.getResult().getDownloadUrl().toString();
+                                        if(thumb_task.isSuccessful()){
+
+                                            Map updateHashMap = new HashMap();
+                                            updateHashMap.put("image",download_url);
+                                            updateHashMap.put("thumb_image",thumb_download_url);
+                                            mUserDatabase.updateChildren(updateHashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        mProgressDialog.dismiss();
+                                                        Toast.makeText(ProfilActivity.this,"Uploaded",Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+                                        }else {
+                                            Toast.makeText(ProfilActivity.this,"Erreur thumbnail",Toast.LENGTH_LONG).show();
+                                            mProgressDialog.dismiss();
+                                        }
                                     }
-                                }
-                            });
-                        }else {
-                            Toast.makeText(ProfilActivity.this,"Erreur upload",Toast.LENGTH_LONG).show();
-                            mProgressDialog.dismiss();
+                                });
+
+
+                            }else {
+                                Toast.makeText(ProfilActivity.this,"Erreur upload",Toast.LENGTH_LONG).show();
+                                mProgressDialog.dismiss();
+                            }
                         }
-                    }
-                });
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }

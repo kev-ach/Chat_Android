@@ -5,6 +5,8 @@
     <string name="senregistrer">S\'enregistrer</string>
     <string name="profil">Modifier votre profil</string>
     <string name="modifier">Modifier</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="votreMessage">Votre message : </string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/chat_profile_btn"
-        android:title="Profile" />
+        android:title="Profil" />
     <item
         android:id="@+id/chat_contacts_btn"
         android:title="Contacts" />
