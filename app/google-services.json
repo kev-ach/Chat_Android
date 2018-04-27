@@ -15,11 +15,79 @@
       },
       "oauth_client": [
         {
+          "client_id": "217158634639-54vaunqvpimcgkndala8pdkmul2lpb13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kevin.android_chat",
+            "certificate_hash": "6e6be1c56b20903aacbb7d25d05664867c792ece"
+          }
+        },
+        {
+          "client_id": "217158634639-qurrt33dt944ebtaa6m9pf17mp1q63kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kevin.android_chat",
+            "certificate_hash": "3163a7c6da7177934195a650c26cc6ad4cdba302"
+          }
+        },
+        {
+          "client_id": "217158634639-uacjs3t7kakmen90krdtgocqvltbbffv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kevin.android_chat",
+            "certificate_hash": "0de716273be1706186109823d6152619a7d70e9c"
+          }
+        },
+        {
           "client_id": "217158634639-finv71ma10tav9srn3hj2clu0a9dj731.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.kevin.android_chat",
             "certificate_hash": "d61081416fdae8c5cecdf561406c4ed1136ae8eb"
+          }
+        },
+        {
+          "client_id": "217158634639-8hrijvkjfjm5cqdc9qu60qq7mgcs1k91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE1H4XLtxtWIfltLLJ7zvf90a3S6qHgRY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217158634639-8hrijvkjfjm5cqdc9qu60qq7mgcs1k91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217158634639:android:ea8ccd9b98795c10",
+        "android_client_info": {
+          "package_name": "com.example.nam.androidchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217158634639-m7tujan4of2e50p5vsfqu3a1f03icmi4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nam.androidchat",
+            "certificate_hash": "3163a7c6da7177934195a650c26cc6ad4cdba302"
           }
         },
         {

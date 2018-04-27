@@ -5,10 +5,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.kevin.android_chat.models.SectionsPagerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,6 +48,7 @@ public class ChatActivity extends AppCompatActivity {
 
         mTabLayout = (TabLayout) findViewById(R.id.chat_tabs);
         mTabLayout.setupWithViewPager(mViewPager);
+
     }
 
     @Override

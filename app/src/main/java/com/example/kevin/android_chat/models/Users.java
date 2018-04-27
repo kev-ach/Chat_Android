@@ -11,8 +11,6 @@ public class Users {
     public String thumb_image;
 
     public Users(){
-
-
     }
 
     public Users(String pseudo, String nom, String prenom, String email, String image, String telephone, String thumb_image) {

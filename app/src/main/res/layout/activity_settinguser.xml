@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PseudoActivity">
+    tools:context=".SettingUserActivity">
 
     <include
-        android:id="@+id/pseudo_toolbar"
+        android:id="@+id/setting_toolbar"
         layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/pseudo_change"
+        android:id="@+id/setting_change"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -25,11 +25,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Pseudo" />
+            android:hint="Votre modification" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonPseudoSave"
+        android:id="@+id/buttonSettingSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

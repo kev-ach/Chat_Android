@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,9 +26,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -129,9 +126,42 @@ public class ProfilActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String pseudo_value = mPseudo.getText().toString();
-                Intent pseudoIntent = new Intent(ProfilActivity.this, PseudoActivity.class);
+                Intent pseudoIntent = new Intent(ProfilActivity.this, SettingUserActivity.class);
                 pseudoIntent.putExtra("pseudo_value",pseudo_value);
                 startActivity(pseudoIntent);
+            }
+        });
+
+        mEditName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String name_value = mNom.getText().toString();
+                Intent nameIntent = new Intent(ProfilActivity.this, SettingUserActivity.class);
+                nameIntent.putExtra("name_value",name_value);
+                startActivity(nameIntent);
+            }
+        });
+
+        mEditEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email_value = mEmail.getText().toString();
+                Intent emailIntent = new Intent(ProfilActivity.this, SettingUserActivity.class);
+                emailIntent.putExtra("email_value",email_value);
+                startActivity(emailIntent);
+            }
+        });
+
+        mEditTel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String telephone_value = mTelephone.getText().toString();
+                Intent telephoneIntent = new Intent(ProfilActivity.this, SettingUserActivity.class);
+                telephoneIntent.putExtra("telephone_value",telephone_value);
+                startActivity(telephoneIntent);
             }
         });
 
