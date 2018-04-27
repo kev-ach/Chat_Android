@@ -8,8 +8,8 @@
         android:id="@+id/mine_message_text_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/me_single_message_image"
         android:background="@drawable/message_me_shape_background"
         android:padding="10dp"
         android:text="Message Text"
@@ -21,6 +21,15 @@
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/mine_message_text_layout"
-        android:layout_below="@+id/mine_message_text_layout" />
+        android:layout_below="@+id/mine_message_text_layout"
+        android:layout_marginRight="0dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/me_single_message_image"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/default_avatar" />
 
 </RelativeLayout>

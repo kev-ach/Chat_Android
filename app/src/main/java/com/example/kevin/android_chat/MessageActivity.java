@@ -62,6 +62,10 @@ public class MessageActivity extends AppCompatActivity {
     private String mLastKey="";
     private String mPevKey="";
 
+    public String getmChatUser() {
+        return mChatUser;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
